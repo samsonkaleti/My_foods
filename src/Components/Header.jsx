@@ -16,7 +16,7 @@ const Header = () => {
     { name: "HOME", path: "/" },
     { name: "ABOUT", path: "/about" },
     { name: "CONTACT", path: "/contact" },
-    { name: "INFO", path: "/info" },
+    
     { name: "STORE", path: "/store" },
   ];
   const onlineStatus = useOnlineStatus();
