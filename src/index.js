@@ -4,7 +4,7 @@ import "./index.css";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import About from "./Components/About";
+// import About from "./Components/About";
 import ErrorPage from "./Components/ErrorPage";
 import Contact from "./Components/Contact";
 // import Info from "./Components/Info";
@@ -14,6 +14,7 @@ import Shimmer from "./Components/Shimmer";
 import userContext from "./utils/UserContext";
 
 const Store = lazy(() => import("./Components/Store"));
+const About = lazy(() => import("./Components/About"));
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -44,7 +45,11 @@ const AppRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <About />
+          </Suspense>
+        ),
       },
 
       {
