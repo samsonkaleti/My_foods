@@ -1,8 +1,9 @@
 import ReCard, { withOpenLabel } from "./ReCard";
-// import Shimmer from "./Shimmer";
-import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { RESTRO_DELHI, RESTRO_KORMANGLA } from "../utils/content";
+import { RESTRO_DELHI } from "../utils/content"; 
+import userContext from "../utils/UserContext";
 
 const Body = () => {
   const [ResList, setResList] = useState([]);
@@ -38,12 +39,16 @@ const Body = () => {
       data.info.name.toLowerCase().includes(SearchText.toLocaleLowerCase())
     );
     setFilterList(filterNameDataList);
-  }, [ResList, SearchText]);
+  }, [ResList, SearchText]);  
 
-  // return ResList.length === 0 ? (
-  //   <Shimmer />
-  // ) :
-  return (
+  const {LoggedInUser,setUserName} = useContext(userContext)
+
+
+
+  return(ResList?.length === 0 ? (
+    <Shimmer />
+  ) :
+   (
     <div className="h-full  w-full  pt-36 left-0 right-0">
       <div className=" p-4 m-4 items-center  flex-nowrap">
         <input
@@ -83,10 +88,16 @@ const Body = () => {
         >
           Top Rated Restraints
         </button>
-      </div>
+
+        <label htmlFor="useName" className="m-2">User Name : </label>
+        <input className=  " px-2 py-1 rounded-md border-2  border-pink-500 " type="text" name="username" id="useName" value={LoggedInUser} onChange={(e) => setUserName(e.target.value)} />
+        </div>
+        
+
+
+
       <div className="flex  items-center flex-wrap w-full">
-        {FilterList?.map((res) => 
-           (
+        {FilterList?.map((res) => (
           <Link
             className="link"
             key={res.info.id}
@@ -98,10 +109,11 @@ const Body = () => {
               <ReCard resData={res} />
             )}
           </Link>
-  ))}
+        ))}
       </div>
     </div>
-  );
+    )
+  )
 };
 
 export default Body;

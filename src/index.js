@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Header from "./Components/Header";
@@ -11,15 +11,25 @@ import Contact from "./Components/Contact";
 import RestroMenu from "./Components/RestroMenu";
 import Shimmer from "./Components/Shimmer";
 // import Store from "./Components/Store";
+import userContext from "./utils/UserContext";
 
 const Store = lazy(() => import("./Components/Store"));
 
 const AppLayout = () => {
+  const [userName, setUserName] = useState();
+  useEffect(() => {
+    // fetch method
+
+    const data = "samson kaleti";
+    setUserName(data);
+  }, []);
   return (
-    <div className=" bg-white">
-      <Header />
-      <Outlet />
-    </div>
+    <userContext.Provider value={{ LoggedInUser: userName, setUserName }}>
+      <div className=" bg-white">
+        <Header />
+        <Outlet />
+      </div>
+    </userContext.Provider>
   );
 };
 
@@ -41,7 +51,6 @@ const AppRouter = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-     
 
       {
         path: "/store",

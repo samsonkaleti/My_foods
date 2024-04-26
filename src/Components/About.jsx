@@ -1,28 +1,11 @@
 import React from 'react'; 
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import shyam from "./Logos/shyam.png";
 import { HiOutlineMail } from 'react-icons/hi'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { FaGithub, FaLinkedin, } from 'react-icons/fa'
 
 const About = () => { 
-
-	useEffect(() => {
-		FetchAboutMe() 
-		
-	}, [])  
-
-	const FetchAboutMe = async () => {
-		const data = await fetch("https://www.linkedin.com/in/samsonkaleti/") 
-		const jsonData = await data.json() 
-
-	
-		console.log(jsonData)
-	}
-	
-	
-
-
 
 	return (
 		<div className="text-black flex flex-col justify-center  h-screen w-full mt-52 mb-52"> 
