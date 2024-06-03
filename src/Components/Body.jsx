@@ -49,7 +49,7 @@ const Body = () => {
     <Shimmer />
   ) :
    (
-    <div className="h-full  w-full  pt-36 left-0 right-0">
+    <div className="h-full  w-full  pt-[100px] left-0 right-0">
       <div className=" p-4 m-4 items-center  flex-nowrap">
         <input
           type="search"

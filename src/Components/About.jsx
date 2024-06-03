@@ -8,7 +8,7 @@ import { FaGithub, FaLinkedin, } from 'react-icons/fa'
 const About = () => { 
 
 	return (
-		<div className="text-black flex flex-col justify-center  h-screen w-full mt-52 mb-52"> 
+		<div className="text-black flex flex-col justify-center  w-full pt-[100px] mb-52"> 
 			
 			<div className=" hidden lg:flex fixed left-0 top-[36%] text-white">
 
@@ -31,25 +31,25 @@ const About = () => {
 
 			</div>
 			
-			<h3 className='font-[lato-400] text-pink-600 text-xl mt-8  ml-20'>HELLO! IT'S NICE TO SEE YOU HERE!.........</h3>
-			<h1 className='font-[Recoleta-400] text-[90px] p-2 ml-32'>About <span className='text-red-400'>Me...</span></h1> 
+			<h3 className='font-[lato-400] text-pink-600 ml-3  text-[15px] sm:text-xl mt-8  sm:ml-20'>HELLO! IT'S NICE TO SEE YOU HERE!.........</h3>
+			<h1 className='font-[Recoleta-400] text-[35px] sm:text-[90px] ml-2 sm:p-2 sm:ml-32'>About <span className='text-red-400'>Me...</span></h1> 
 
 <div className="flex flex-col justify-center items-center">
-			<div className="max-w-[1000px] w-full grid sm:grid-cols-3 gap-0 px-4 mt-20 ">
+			<div className="max-w-[1000px] w-full grid sm:grid-cols-3 gap-0 px-4 sm:mt-20 ">
 				<div className="sm:text-right text-2xl font-bold font-[lato-400] mt-10">
 					<p className="">
 						Hi. I'm <span className="text-yellow-400">Samson,</span>  nice to meet you. Please take a look around on my profile.
 					</p>
 				</div> 
 
-				<div className="border border-lime-400 h-[300px] w-0 ml-40 "></div> 
-				<div className="mr-32 mt-10 w-full">
+				<div className="hidden md:block border border-lime-400 h-[300px] w-0 ml-40 "></div> 
+				<div className="sm:mr-32 mt-10 w-full ml-20 ">
 					<img className='w-[200px] ' src={shyam} alt="profile"  />
 					
 				</div>
 			</div> 
 			
-			<p className='font-[lato-400] w-9/12 mt-10 text-xl '>
+			<p className='font-[lato-400] w-10/12 mt-10 text-xl '>
 					<span className='text-red-400 text-lg font-bold'>\\\</span> Hi there! I'm an aspiring frontend developer bursting with
 				creativity and a strong desire to make my mark in the world of web
 				design. My journey started with diving into HTML, CSS,

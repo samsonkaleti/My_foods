@@ -23,7 +23,7 @@ const Header = () => {
   let [btnName, setBtnName] = useState(true);
   return (
     <div className="">
-      <div className="bg-white shadow-md top-0 left-0 w-full fixed  h-[10vh] md:h-[18vh] mb-6  md:flex  py-4 md:px-10 px-7   md:justify-between items-center z-[1000]  ">
+      <div className="bg-white shadow-md top-0 left-0 w-full fixed  h-20 md:h-[100px] mb-6  md:flex  py-4 md:px-10 px-7   md:justify-between items-center z-[100]  ">
         <div className="">
           <Link to={"/"} className="link">
             <img
